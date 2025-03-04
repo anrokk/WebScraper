@@ -16,6 +16,10 @@ h1 {
 }
 
 ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     list-style-type: none;
     padding: 0;
 }
@@ -26,9 +30,10 @@ li {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 600px;
 }
 
 img {
-    max-width: 100px;
+    max-width: 200px;
     height: auto;
 }
