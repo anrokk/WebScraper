@@ -9,12 +9,17 @@ class IfitSpider(scrapy.Spider):
     def parse(self, response, **kwargs):
         products = response.css("div.src-product-3")
 
-        for product in products.getall():
-            yield {
-                "Title": product.css("a.title::text").get().strip(),
-                "Price": product.css("div.price::text, strong.price::text").get().strip(),
-                "Picture href": product.css("a.img-wrap img::attr(src)").get()
-            }
+        for product in products:
+            title = product.css("figcaption.info-wrap a::text").get()
+            price = product.css("div.price-wrap strong.price::text, div.price-wrap div.price::text").get()
+            image = product.css("a.img-wrap img::attr(src)").get()
+
+            if title and price and image:
+                yield {
+                    "Title": title.strip(),
+                    "Price": price.strip(),
+                    "Picture href": image,
+                }
 
         current_page = int(response.url.split("page=")[-1])
         if current_page < 8:
