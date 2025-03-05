@@ -23,7 +23,7 @@ python database_setup.py
 4. Start the web application:
 ```bash
 cd web
-python web_app.py
+python app.py
 ```
 The app will be available at:
 ```bash
