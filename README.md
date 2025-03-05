@@ -4,6 +4,8 @@
 
 A web scraper created in the Advanced Python course in TalTech. This project uses Scrapy to extract product data from an Estonian e-commerce store and stores it in an SQLite database. A Flask-based web application allows users to query and display the data.
 
+The products.json file is also in the repository. Please delete it before going through the setup procedure
+
 ## Setup
 
 1. Install scrapy (if not already installed):
